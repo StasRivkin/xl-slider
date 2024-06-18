@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-6 offset-md-3">
+      <input type="file" (change)="onFileSelected($event)" class="form-control mb-3" accept=".xls,.xlsx">
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th *ngFor="let header of table[0]">{{ header }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let row of table.slice(1)">
+          <td *ngFor="let cell of row">{{ cell }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
